@@ -1,0 +1,21 @@
+h1 Poney #{@pony.name}
+
+h2 Informations
+
+table
+  tr
+    td Nom
+    td= @pony.name
+  tr
+    td Couleur de la crinière
+    td= @pony.mane
+  tr
+    td Couleur de la robe
+    td= @pony.fur
+  tr
+    td Couleur des yeux
+    td= @pony.eyes
+
+h2 Description
+
+p= @pony.description
