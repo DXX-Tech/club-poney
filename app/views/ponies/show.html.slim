@@ -19,3 +19,8 @@ table
 h2 Description
 
 p= @pony.description
+
+h2 Groups
+ul
+  - @pony.groups.each do |group|
+    li group.name

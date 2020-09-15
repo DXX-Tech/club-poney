@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_09_135958) do
+ActiveRecord::Schema.define(version: 2020_09_10_142950) do
+
+  create_table "groups", force: :cascade do |t|
+    t.string "name"
+  end
+
+  create_table "groups_ponies", force: :cascade do |t|
+    t.integer "group_id"
+    t.integer "pony_id"
+    t.index ["group_id"], name: "index_groups_ponies_on_group_id"
+    t.index ["pony_id"], name: "index_groups_ponies_on_pony_id"
+  end
 
   create_table "imports", force: :cascade do |t|
     t.string "filename"

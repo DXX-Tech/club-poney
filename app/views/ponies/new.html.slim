@@ -1,0 +1,29 @@
+h1 Bienvenue à la ferme des poneys !
+
+h2 Poneys présents
+
+=form_for Pony.new do |f|
+
+  .field
+    f.label :name
+    f.text_field :name
+
+  .field
+    f.label :mane
+    f.text_field :mane
+
+  .field
+    f.label :fur
+    f.text_field :fur
+
+  .field
+    f.label :eyes
+    f.text_field :eyes
+
+  .field
+    f.label :description
+    f.text_area :description
+  = submit_tag "Créer ce poney!"
+
+=link_to 'Importer des poneys', new_import_path, class: 'button'
+=link_to 'Historique des imports', imports_path, class: 'button'
