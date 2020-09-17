@@ -1,0 +1,8 @@
+h1 Groupe #{@group.name}
+
+h2 Liste des poneys du groupe
+ul
+- if @group.ponies
+  - @group.ponies.each do |pony|
+    li =link_to pony.name, pony_path(pony)
+=link_to 'Voir les groupes', groups_path, class: 'button'

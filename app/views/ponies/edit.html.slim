@@ -1,6 +1,7 @@
-h1 Bienvenue à la ferme des poneys !
+h1 Poney #{@pony.name}
 
-h2 Poneys présents
+h2 Edition du poney
+
 
 =form_for @pony do |f|
 
@@ -23,7 +24,7 @@ h2 Poneys présents
   .field
     =f.label :description
     =f.text_area :description
+
   =f.submit 
 
-=link_to 'Voir les poneys', ponies_path, class: 'button'
-=link_to 'Historique de création des poneys', imports_path, class: 'button'
+=link_to 'retour au poney', pony_path(@pony), class: 'button'

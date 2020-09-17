@@ -5,16 +5,15 @@ h2 Informations
 table
   tr
     td Nom
-    td= @pony.name
-  tr
     td Couleur de la crinière
-    td= @pony.mane
-  tr
     td Couleur de la robe
-    td= @pony.fur
-  tr
     td Couleur des yeux
+  tr
+    td= @pony.name
+    td= @pony.mane
+    td= @pony.fur
     td= @pony.eyes
+    td= link_to (image_tag("https://cdn.icon-icons.com/icons2/936/PNG/64/cog-wheel-silhouette_icon-icons.com_73617.png")), edit_pony_path, class:'button' 
 
 h2 Description
 
@@ -22,5 +21,7 @@ p= @pony.description
 
 h2 Groups
 ul
+- if @pony.groups.any?
   - @pony.groups.each do |group|
-    li group.name
+      li =link_to group.name, group_path(group)
+=link_to 'Voir les poneys', ponies_path, class: 'button'

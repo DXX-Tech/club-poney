@@ -4,5 +4,6 @@ Rails.application.routes.draw do
   root 'ponies#index'
   resources :ponies
   resources :groups
+  resources :groups_ponies
   resources :imports
 end

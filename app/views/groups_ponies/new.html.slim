@@ -1,0 +1,15 @@
+h1 Bienvenue à la ferme des poneys !
+
+h2 Ajout d'un poney à un groupe
+
+=form_for @groups_pony do |f|
+
+  .field
+    =f.label :poney
+  	=f.select(:pony_id, @ponies.each.collect{|p| [p.name,p.id]},{ :prompt => "Choisis un poney" }) 
+  .field
+    =f.label :groupe
+  	=f.select(:group_id, @groups.each.collect{|p| [p.name,p.id]},{ :prompt => "Choisis un groupe" }) 
+  =f.submit 
+
+=link_to 'Les groupes de poneys', groups_path, class: 'button'
