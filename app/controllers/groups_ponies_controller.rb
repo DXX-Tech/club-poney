@@ -24,22 +24,8 @@ class GroupsPoniesController < ApplicationController
   	params.require(:groups_pony).permit(:pony_id, :group_id)
   end
 
-  def edit
-  	@groups_pony = GroupsPony.find(params[:id])
-  end
-
-  def update
-   	@groups_pony = GroupsPony.find(params[:id])
-
-   	if @groups_pony.update_attributes(groups_pony_param)
-    	redirect_to :action => 'show', :id => @groups_pony
-   	else
-    	render :action => 'edit'
-   	end
-	end
-
 	def destroy 
    		GroupsPony.find(params[:id]).destroy
-   		redirect_to :action => 'index'
+   		redirect_to :controller => 'groups', :action => 'index'
 	end
 end

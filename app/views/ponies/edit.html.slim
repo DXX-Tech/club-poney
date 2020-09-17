@@ -5,26 +5,26 @@ h2 Edition du poney
 
 =form_for @pony do |f|
 
-  .field
-    =f.label :name
-    =f.text_field :name
+  table
+    tr
+      td =f.label :Nom
+      td =f.text_field :name
+    tr  
+      td =f.label :Crinière
+      td =f.text_field :mane
 
-  .field
-    =f.label :mane
-    =f.text_field :mane
+    tr
+      td =f.label :Robe
+      td =f.text_field :fur
 
-  .field
-    =f.label :fur
-    =f.text_field :fur
+    tr
+      td =f.label :Yeux
+      td =f.text_field :eyes
 
-  .field
-    =f.label :eyes
-    =f.text_field :eyes
+    tr
+      td =f.label :Description
+      td =f.text_area :description
+  .button_menu
+    =f.submit "Relooking du poney"
 
-  .field
-    =f.label :description
-    =f.text_area :description
-
-  =f.submit 
-
-=link_to 'retour au poney', pony_path(@pony), class: 'button'
+=link_to 'Retour au poney', pony_path(@pony), class: 'button'

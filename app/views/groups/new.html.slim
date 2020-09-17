@@ -4,13 +4,15 @@ h2 Création de groupe
 
 =form_for @group do |f|
 
-  .field
-    =f.label :name
-    =f.text_field :name
-  .field
-    =f.label :description
-    =f.text_field :description
+	table
+  		tr
+      		td =f.label :name
+    		td =f.text_field :name
+  		tr
+    		td =f.label :description
+    		td =f.text_area :description
 
-  =f.submit 
+    .button_menu
+		=f.submit "Créer le groupe"
 
 =link_to 'Les groupes de poneys', groups_path, class: 'button'

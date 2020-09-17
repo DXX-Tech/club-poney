@@ -3,14 +3,16 @@ h1 Groupe #{@group.name}
 h2 Edition de groupe
 
 =form_for @group do |f|
+	table
+  		tr
+      		td =f.label :name
+    		td =f.text_field :name
+  		tr
+    		td =f.label :description
+    		td =f.text_area :description
 
-  .field
-    =f.label :name
-    =f.text_field :name
-  .field
-    =f.label :description
-    =f.text_field :description
+    .button_menu
+		=f.submit "Modification du groupe"
 
-  =f.submit 
 
-  =link_to 'retour au groupe', group_path(@group), class: 'button'
+=link_to 'Retour au groupe', group_path(@group), class: 'button'

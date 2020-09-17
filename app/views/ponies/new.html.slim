@@ -4,25 +4,26 @@ h2 Poneys présents
 
 =form_for @pony do |f|
 
-  .field
-    =f.label :Nom
-    =f.text_field :name
+  table
+    tr
+      td =f.label :Nom
+      td =f.text_field :name
+    tr  
+      td =f.label :Crinière
+      td =f.text_field :mane
 
-  .field
-    =f.label :Crinière
-    =f.text_field :mane
+    tr
+      td =f.label :Robe
+      td =f.text_field :fur
 
-  .field
-    =f.label :Robe
-    =f.text_field :fur
+    tr
+      td =f.label :Yeux
+      td =f.text_field :eyes
 
-  .field
-    =f.label :Yeux
-    =f.text_field :eyes
-
-  .field
-    =f.label :Description
-    =f.text_area :description
-  =f.submit 
+    tr
+      td =f.label :Description
+      td =f.text_area :description
+  .button_menu
+    =f.submit "Donner naissance à un poney"
 
 =link_to 'Voir les poneys', ponies_path, class: 'button'

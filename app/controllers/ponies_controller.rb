@@ -13,12 +13,15 @@ class PoniesController < ApplicationController
 
   def create
  		@pony = Pony.new(pony_params)
- 		
- 		if @pony.save
- 			redirect_to :action => 'index'
- 		else
- 			render :action => 'new'
- 		end
+ 		unless @pony.name.blank?
+ 		  if @pony.save
+ 			  redirect_to :action => 'index'
+ 		  else
+ 			  render :action => 'new'
+ 		  end
+    else
+      render :action => 'new'
+    end
   end
   
   def pony_params

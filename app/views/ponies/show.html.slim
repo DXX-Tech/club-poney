@@ -18,12 +18,11 @@ table
 
 
 h2 Description
-
-p= @pony.description
+.button_menu
+  label= @pony.description
 
 h2 Groupes
 ul
-- if @pony.groups.any?
   - @pony.groups.each do |group|
-      li =link_to group.name, group_path(group)
+    li =link_to group.name, group_path(group)
 =link_to 'Voir les poneys', ponies_path, class: 'button'

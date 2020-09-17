@@ -1,14 +1,16 @@
 h1 #{@group.name}
 
-h2 Liste des poneys du groupe
-ul
-- if @group.ponies
-  - @group.ponies.each do |pony|
-    li =link_to pony.name, pony_path(pony)
-
-h2 Description du groupe
-label =@group.description
-.field
+.right
 	= link_to (image_tag("https://img.icons8.com/ios/452/pencil-tip.png",size: "40x40")), edit_group_path
 	= link_to (image_tag("https://img.icons8.com/small/452/filled-trash.png",size:"40x40")), @group, :method => :delete, :data => {:confirm => 'Voulez-vous vraiment supprimer ce groupe ?'}  
+
+h2 Liste des poneys du groupe
+ul
+	- @group.ponies.each do |pony|
+    	li =link_to pony.name, pony_path(pony)
+
+h2 Description du groupe
+.button_menu
+	label =@group.description
+
 =link_to 'Voir les groupes', groups_path, class: 'button'

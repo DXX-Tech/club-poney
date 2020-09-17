@@ -9,9 +9,12 @@ class GroupsController < ApplicationController
 
   def create
     @group = Group.new(group_params)
-    
-    if @group.save
-      redirect_to :action => 'index'
+    unless @group.name.blank?
+      if @group.save
+        redirect_to :action => 'index'
+      else
+        render :action => 'new'
+      end
     else
       render :action => 'new'
     end

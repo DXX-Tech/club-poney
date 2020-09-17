@@ -10,6 +10,7 @@ h2 Ajout d'un poney à un groupe
   		tr
   			td =f.label :groupe
   			td =f.select(:group_id, @groups.each.collect{|p| [p.name,p.id]},{ :prompt => "Choisis un groupe" }) 
-  	=f.submit "Ajouter le poney au groupe"
+  	.button_menu
+  		=f.submit "Ajouter le poney au groupe"
 
 =link_to 'Les groupes de poneys', groups_path, class: 'button'
