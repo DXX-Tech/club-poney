@@ -10,9 +10,9 @@ table
     tr 
       td= link_to group.name, group_path(group)
       td =group.ponies.count
-
-=link_to 'Voir les poneys', ponies_path, class: 'button'
-=link_to 'Créer un nouveau groupe', new_group_path, class: 'button'
-=link_to 'Ajouter un poney à un groupe', new_groups_pony_path, class: 'button'
+.button_menu
+	=link_to 'Voir les poneys', ponies_path, class: 'button'
+	=link_to 'Créer un nouveau groupe', new_group_path, class: 'button'
+	=link_to 'Ajouter un poney à un groupe', new_groups_pony_path, class: 'button'
 
 

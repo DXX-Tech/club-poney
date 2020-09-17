@@ -5,6 +5,8 @@ ul
 - if @group.ponies
   - @group.ponies.each do |pony|
     li =link_to pony.name, pony_path(pony)
+
+h2 Description du groupe
 label =@group.description
 .field
 	= link_to (image_tag("https://img.icons8.com/ios/452/pencil-tip.png",size: "40x40")), edit_group_path

@@ -1,16 +1,53 @@
-table, th, td {
-  border: 1px solid black;
+body{
+  font-family: "Century Gothic";
+}
+
+a{
+  text-decoration: none;  
+}
+
+table{
+  margin: auto;
+
 }
 
 th, td {
+  border: 1px solid black;
+  border-style: none none solid solid ;
   padding: 1em;
 }
+
+tr:last-child td:not(:first-child){
+  border-style: none none none solid ;
+}
+tr:last-child td:first-child{
+  border-style: none;
+}
+
+th:first-child,td:first-child{
+  border-style: none none solid none;
+}
+
 h1{
   text-align: center
 }
-.button {
-  display: inline-block;
+
+h2{
   margin: 1em;
+}
+
+td.icons{
+    border-style: none !important;
+}
+
+.button_menu{
+    text-align: center
+}
+
+.button {
+  font-size: 0.8em;
+  display: inline-block;
+  margin: 3em 1.5em;
   padding: 1em;
   background-color: lightgrey;
   color: black;
@@ -28,3 +65,4 @@ input[type="text"] {
   padding: 10px;
   width: 30%;
 }
+
