@@ -5,5 +5,4 @@ Rails.application.routes.draw do
   resources :ponies
   resources :groups
   resources :groups_ponies
-  resources :imports
 end

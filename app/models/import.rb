@@ -1,3 +1,0 @@
-class Import < ApplicationRecord
-
-end

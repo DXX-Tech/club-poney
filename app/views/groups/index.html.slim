@@ -7,7 +7,7 @@ table
     th Nom
     th Taille
   - @groups.each do |group|
-    tr
+    tr 
       td= link_to group.name, group_path(group)
       td =group.ponies.count
 

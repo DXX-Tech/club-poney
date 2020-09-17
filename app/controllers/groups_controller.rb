@@ -18,14 +18,30 @@ class GroupsController < ApplicationController
   end
   
   def group_params
-      params.require(:group).permit(:name)
+      params.require(:group).permit(:name, :description)
   end
 
   def edit
     @group = Group.find_by(id: params[:id])
   end
+  
+  def update
+    @group = Group.find(params[:id])
+
+    if @group.update_attributes(group_params)
+      redirect_to :action => 'show', :id => @group
+    else
+      render :action => 'edit'
+    end
+  end
 
   def show
     @group = Group.find_by(id: params[:id])
   end
+  def destroy
+      Group.find_by(id: params[:id]).delete
+      GroupsPony.where(group_id:params[:id]).delete_all
+      redirect_to :action => 'index'
+  end
+
 end

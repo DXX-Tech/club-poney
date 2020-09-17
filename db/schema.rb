@@ -10,10 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_16_174153) do
+ActiveRecord::Schema.define(version: 2020_09_17_073102) do
 
   create_table "groups", force: :cascade do |t|
     t.string "name"
+    t.string "description"
   end
 
   create_table "groups_ponies", id: false, force: :cascade do |t|

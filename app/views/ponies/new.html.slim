@@ -5,25 +5,24 @@ h2 Poneys présents
 =form_for @pony do |f|
 
   .field
-    =f.label :name
+    =f.label :Nom
     =f.text_field :name
 
   .field
-    =f.label :mane
+    =f.label :Crinière
     =f.text_field :mane
 
   .field
-    =f.label :fur
+    =f.label :Robe
     =f.text_field :fur
 
   .field
-    =f.label :eyes
+    =f.label :Yeux
     =f.text_field :eyes
 
   .field
-    =f.label :description
+    =f.label :Description
     =f.text_area :description
   =f.submit 
 
 =link_to 'Voir les poneys', ponies_path, class: 'button'
-=link_to 'Historique de création des poneys', imports_path, class: 'button'

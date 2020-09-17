@@ -39,8 +39,9 @@ class PoniesController < ApplicationController
    	end
 	end
 
-	def delete
-   		Pony.find(params[:id]).destroy
+	def destroy
+   		Pony.find(params[:id]).delete
+      GroupsPony.where(pony_id:params[:id]).delete_all
    		redirect_to :action => 'index'
 	end
 

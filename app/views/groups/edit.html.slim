@@ -1,6 +1,6 @@
-h1 Bienvenue à la ferme des poneys !
+h1 Groupe #{@group.name}
 
-h2 Création de groupe
+h2 Edition de groupe
 
 =form_for @group do |f|
 
@@ -13,4 +13,4 @@ h2 Création de groupe
 
   =f.submit 
 
-=link_to 'Les groupes de poneys', groups_path, class: 'button'
+  =link_to 'retour au groupe', group_path(@group), class: 'button'

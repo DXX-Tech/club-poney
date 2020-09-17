@@ -1,4 +1,4 @@
-h1 Poney #{@pony.name}
+h1 #{@pony.name}
 
 h2 Informations
 
@@ -13,13 +13,15 @@ table
     td= @pony.mane
     td= @pony.fur
     td= @pony.eyes
-    td= link_to (image_tag("https://cdn.icon-icons.com/icons2/936/PNG/64/cog-wheel-silhouette_icon-icons.com_73617.png")), edit_pony_path, class:'button' 
+    td= link_to (image_tag("https://img.icons8.com/ios/452/pencil-tip.png",size: "40x40")), edit_pony_path
+    td= link_to (image_tag("https://img.icons8.com/small/452/filled-trash.png",size:"40x40")), @pony, :method => :delete, :data => {:confirm => 'Voulez-vous vraiment supprimer ce poney ?'}  
+
 
 h2 Description
 
 p= @pony.description
 
-h2 Groups
+h2 Groupes
 ul
 - if @pony.groups.any?
   - @pony.groups.each do |group|

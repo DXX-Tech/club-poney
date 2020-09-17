@@ -9,12 +9,15 @@ class GroupsPoniesController < ApplicationController
  		@groups_pony = GroupsPony.new(groups_pony_params)
     @ponies = Pony.all
     @groups = Group.all
-
- 		if @groups_pony.save
- 			redirect_to :controller => 'groups', :action => 'index'
- 		else
- 			render :action => 'new'
- 		end
+    unless GroupsPony.find_by(group_id:@groups_pony.group_id, pony_id:@groups_pony.pony_id)
+ 		  if @groups_pony.save
+ 			  redirect_to :controller => 'groups', :action => 'index'
+ 		  else
+ 			  render :action => 'new'
+ 		  end
+    else
+      render :action => 'new'
+    end
   end
   
   def groups_pony_params
@@ -35,7 +38,7 @@ class GroupsPoniesController < ApplicationController
    	end
 	end
 
-	def delete
+	def destroy 
    		GroupsPony.find(params[:id]).destroy
    		redirect_to :action => 'index'
 	end
